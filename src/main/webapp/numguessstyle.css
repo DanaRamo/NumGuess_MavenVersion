@@ -62,13 +62,14 @@ input:hover{
 
 #navigation {
     position: absolute;
-    top: 120px;
+    top: 110px;
     width: auto;
     height: auto;
     background-color: orange;
     color:black;
     /*padding-left: .8em;*/
     padding: 0 .8em 0 .8em;
+    z-index:2;
 ;
 }
 
@@ -77,6 +78,7 @@ input:hover{
     width: 100%;
     /*padding: 10px;*/
     position: absolute;
+    z-index:0;
 
 
 
@@ -89,9 +91,9 @@ input:hover{
 
 #postcontent {
     position: absolute;
-    right: 0px;
+    right: 0;
 
-
+    z-index:1;
     /*position: absolute;*/
     /*left: 360px;*/
     top: 110px;
@@ -108,9 +110,8 @@ input:hover{
 #serverResponse {
     /*text-align: center;*/
     color:black;
-    position: absolute;
+    position: relative;
     top: 210px;
-    left: 140px;
     width: auto;
     background-color: #f3d4bd;
     /*color: #ff7507;*/
