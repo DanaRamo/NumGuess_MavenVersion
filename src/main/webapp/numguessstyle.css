@@ -13,6 +13,8 @@ body {
     margin: 0;
     background-image: url("http://grapplergourmet.com/wp-content/uploads/2015/03/piles.jpg");
     text-align: center;
+    font-weight: bold;
+
 }
 
 
@@ -60,32 +62,46 @@ input:hover{
 
 #navigation {
     position: absolute;
-    top: 110px;
+    top: 120px;
     width: auto;
     height: auto;
     background-color: orange;
     color:black;
-    padding-left: .8em;
+    /*padding-left: .8em;*/
+    padding: 0 .8em 0 .8em;
 ;
 }
 
 #bodycontent {
+    margin: auto;
+    width: 100%;
+    /*padding: 10px;*/
     position: absolute;
-    left: 140px;
+
+
+
+    /*position: absolute;*/
+    /*left: 140px;*/
     top: 120px;
-    padding-top:.4em;
-    padding-left:3em;
+    /*padding-top:.4em;*/
+    /*padding-left:3em;*/
 }
 
 #postcontent {
     position: absolute;
-    left: 360px;
+    right: 0px;
+
+
+    /*position: absolute;*/
+    /*left: 360px;*/
     top: 110px;
-    width: auto;
-    height: auto;
+    /*width: auto;*/
+    /*height: auto;*/
     background-color: orange;
     color:black;
-    padding-left: .8em;
+    /*padding-left: .8em;*/
+    padding: 0 .8em 0 .8em;
+
 ;
 }
 
@@ -106,9 +122,10 @@ input:hover{
     text-align: center;
 }
 
-.centered {
-    position: po;
+#form {
+    text-anchor: italic;
 }
+
 
 
 
