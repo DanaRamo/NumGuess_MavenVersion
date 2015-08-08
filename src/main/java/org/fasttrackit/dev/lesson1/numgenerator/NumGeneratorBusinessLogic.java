@@ -57,15 +57,19 @@ public class NumGeneratorBusinessLogic {
             isFirstTime = false;
         }
         numberOfGuesses++;
-        if (guessNumber == generatedNumber) {
+        if (guessNumber == generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint="";
             successfulGuess = true;
-        } else if (guessNumber < generatedNumber) {
+        } else if (guessNumber < generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint = "higher";
             successfulGuess = false;
-        } else if (guessNumber > generatedNumber) {
+        } else if (guessNumber > generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint = "lower";
             successfulGuess = false;
+        } else if (guessNumber > 10 || guessNumber < 1){
+            hint = "incorrect";
+            successfulGuess = false;
+            System.out.println("HE GOT HERE!");
         }
         return successfulGuess;
     }
