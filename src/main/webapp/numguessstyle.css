@@ -16,7 +16,7 @@ body {
 
 h1 {
     font-size: large;
-    background-color: cornflowerblue;
+    background-color: #ed852a;
     color: white;
     padding-top: 2em;
     padding-bottom: .2em;
@@ -27,9 +27,9 @@ h1 {
 #tagline p {
     font-style: italic;
     font-family: Georgia, Times, serif;
-    background-color: #bed8f3;
-    border-top: 3px solid #7da5d8;
-    border-bottom: 3px solid #7da5d8;
+    background-color: #f3d4bd;
+    border-top: 3px solid #d88a5a;
+    border-bottom: 3px solid #d88a5a;
     padding-top: .2em;
     padding-bottom: .2em;
     padding-left: .8em;
@@ -38,15 +38,15 @@ h1 {
 
 #header {
     position: absolute;
-    border-top: 3px solid #7da5d8;
+    border-top: 3px solid #d88a5a;
     width: 100%;
 }
 
 #navigation {
     position: absolute;
     top: 110px;
-    width: 110px;
-    height: 180px;
+    width: auto;
+    height: auto;
     background-color: navajowhite;
     color:black;
     padding-left: .8em;
@@ -54,7 +54,7 @@ h1 {
 }
 
 #bodycontent {
-    position: absolute;
+    position: relative;
     left: 140px;
     top: 120px;
     padding-top:.4em;
@@ -65,8 +65,8 @@ h1 {
     position: absolute;
     left: 360px;
     top: 110px;
-    width: 120px;
-    height:180px;
+    width: auto;
+    height: auto;
     background-color: navajowhite;
     color:black;
     padding-left: .8em;
@@ -80,7 +80,7 @@ h1 {
     left: 140px;
     width: 200px;
     background-color: floralwhite;
-    color: blue;
+    color: #ff7507;
     padding-left: .8em;
 
 }
