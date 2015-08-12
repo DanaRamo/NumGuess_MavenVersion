@@ -96,6 +96,7 @@ input:hover{
 
 #number {
     text-align: center;
+    width: 2em;
 }
 
 #form {

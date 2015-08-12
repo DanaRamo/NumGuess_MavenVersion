@@ -47,14 +47,14 @@ FastTrackIT 2015
                  var jSonMessage = JSON.parse(xmlHttp.responseText);
                  var keyRestartGame=jSonMessage.keyRestartGame;
                  if (keyRestartGame != undefined && keyRestartGame.length > 0) {
-                     alert("Restart cu succes, jocul a reinceput!");
+                     alert("The game was restarted!");
                      document.getElementById("number").value="";
                      return;
                  }
 
                  var keyError = jSonMessage.keyError;
                  if (keyError != undefined && keyError.length > 0) {
-                     alert("Trebuie sa introduceti un numar valid!");
+                     alert("Please enter a valid number");
                      return;
                  }
                 var keySuccess = jSonMessage.keySuccess;
@@ -72,15 +72,25 @@ FastTrackIT 2015
                  else
                  if(keySuccess=="true")
                  {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number after " + keyNrGuesses + " guesses.";
                  }
              }
          }
 
+        function validate(evt) {
+                var theEvent = evt || window.event;
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+                var regex = /[0-9]/;
+                if ((!regex.test(key)) && !(evt.keyCode == 46 || evt.keyCode == 8)){
+                    theEvent.returnValue = false;
+                    if (theEvent.preventDefault) theEvent.preventDefault();
+                }
+        }
+
     </script>
 
   </head>
-
 
   <body>
 
@@ -102,10 +112,9 @@ FastTrackIT 2015
   </div>
   <div id="bodycontent">
       <div id="form">
-          <label for="number">Number <br/> of oranges:&nbsp;</label><input type="number" id="number" style="width:30px"/>
-
+          <label for="number">Number <br/> of oranges:&nbsp;</label>
+          <input type='text' id="number"  maxlength="2" onkeypress='validate(event)'/>
           </br></br>
-
           <input type="button" id="guessButton" value="Guess now" onClick="guess()"/>
           <input type="button" id="resetButton" value="Reset Game" onClick="reset()"/>
       </div>

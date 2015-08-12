@@ -69,7 +69,6 @@ public class NumGeneratorBusinessLogic {
         } else if (guessNumber > 10 || guessNumber < 1){
             hint = "incorrect";
             successfulGuess = false;
-            System.out.println("HE GOT HERE!");
         }
         return successfulGuess;
     }
