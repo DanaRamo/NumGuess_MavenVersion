@@ -59,6 +59,7 @@ input:hover{
 
 #navigation {
     position: absolute;
+    left: 0;
     top: 110px;
     width: auto;
     height: auto;
@@ -102,13 +103,6 @@ input:hover{
 #form {
     text-anchor: italic;
 }
-
-
-
-
-
-
-
 
 
 /* padding - between border and text -*/

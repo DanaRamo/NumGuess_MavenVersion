@@ -14,86 +14,11 @@ FastTrackIT 2015
     <title>Hello Lab</title>
       <meta charset="utf-8"/>
       <link href="numguessstyle.css" rel="stylesheet" type="text/css"/>
-
-    <script language="JavaScript">
-
-        function reset(){
-            document.getElementById("serverResponse").innerText="";
-            xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange=callback;
-            var url ="NumGenServlet"+"?requestRestartGame=1";
-            xmlHttp.open("GET",url,true);
-            xmlHttp.send();
-        }
-
-         function guess(){
-             xmlHttp = new XMLHttpRequest();
-             xmlHttp.onreadystatechange=callback;
-             var url ="NumGenServlet"+"?requestGuessNumber="+document.getElementById("number").value;
-             xmlHttp.open("GET",url,true);
-             xmlHttp.send();
-         }
-
-        function guessLink(givenValue) {
-            xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange=callback;
-            var url ="NumGenServlet"+"?requestGuessNumber="+givenValue;
-            xmlHttp.open("GET",url,true);
-            xmlHttp.send();
-        }
-
-         function callback() {
-             if(xmlHttp.readyState==4 && xmlHttp.status==200) {
-                 var jSonMessage = JSON.parse(xmlHttp.responseText);
-                 var keyRestartGame=jSonMessage.keyRestartGame;
-                 if (keyRestartGame != undefined && keyRestartGame.length > 0) {
-                     alert("The game was restarted!");
-                     document.getElementById("number").value="";
-                     return;
-                 }
-
-                 var keyError = jSonMessage.keyError;
-                 if (keyError != undefined && keyError.length > 0) {
-                     alert("Please enter a valid number");
-                     return;
-                 }
-                var keySuccess = jSonMessage.keySuccess;
-                 var keyHint = jSonMessage.keyHint;
-                 var keyNrGuesses = jSonMessage.keyNrGuesses;
-
-                 if(keySuccess=="false") {
-                     if (keyHint == "higher")
-                         document.getElementById("serverResponse").innerHTML = "WRONG, Try a Higher one!";
-                     else if (keyHint == "lower")
-                         document.getElementById("serverResponse").innerHTML = "WRONG, Try a Lower one!";
-                     else if (keyHint == "incorrect")
-                            document.getElementById("serverResponse").innerHTML = "Incorrect value!\n Please enter a value between 1 and 10";
-                 }
-                 else
-                 if(keySuccess=="true")
-                 {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number after " + keyNrGuesses + " guesses.";
-                 }
-             }
-         }
-
-        function validate(evt) {
-                var theEvent = evt || window.event;
-                var key = theEvent.keyCode || theEvent.which;
-                key = String.fromCharCode(key);
-                var regex = /[0-9]/;
-                if ((!regex.test(key)) && !(evt.keyCode == 46 || evt.keyCode == 8)){
-                    theEvent.returnValue = false;
-                    if (theEvent.preventDefault) theEvent.preventDefault();
-                }
-        }
-
-    </script>
+      <script src="javaScript.js" type="text/javascript"></script>
 
   </head>
 
   <body>
-
 
   <div id="header">
       <div id="sitebranding">
