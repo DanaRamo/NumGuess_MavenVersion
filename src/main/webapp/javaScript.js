@@ -55,6 +55,10 @@ function callback() {
         else
         if(keySuccess=="true")
         {
+            document.getElementById("guessButton").style.display = 'none';
+            document.getElementById("navigation").style.display = 'none';
+            document.getElementById("postcontent").style.display = 'none';
+
             document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number after " + keyNrGuesses + " guesses.";
             document.getElementById("counter").innerHTML = "It took you " + keyTimeTookToGuess + " seconds.";
         }
