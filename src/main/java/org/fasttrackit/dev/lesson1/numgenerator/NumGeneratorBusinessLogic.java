@@ -30,7 +30,8 @@ public class NumGeneratorBusinessLogic {
     private String hint;
     long startingTime;
     long guessTime;
-    long timeToGuess;
+    double timeToGuess;
+
 
 
     public NumGeneratorBusinessLogic(){
@@ -41,7 +42,7 @@ public class NumGeneratorBusinessLogic {
         return successfulGuess;
     }
 
-    public long getGuessTime(){
+    public double getGuessTime(){
         return timeToGuess;
     }
 
@@ -78,8 +79,11 @@ public class NumGeneratorBusinessLogic {
             hint="";
             successfulGuess = true;
             guessTime = System.currentTimeMillis();
-            timeToGuess = guessTime - startingTime;
+            long x = guessTime - startingTime;
+//            timeToGuess = guessTime - startingTime;
+            timeToGuess = x;
             timeToGuess = timeToGuess / 1000;
+
         } else if (guessNumber < generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint = "higher";
             successfulGuess = false;
