@@ -42,6 +42,7 @@ function callback() {
         var keySuccess = jSonMessage.keySuccess;
         var keyHint = jSonMessage.keyHint;
         var keyNrGuesses = jSonMessage.keyNrGuesses;
+        var keyTimeTookToGuess = jSonMessage.timeToGuess;
 
         if(keySuccess=="false") {
             if (keyHint == "higher")
@@ -55,6 +56,7 @@ function callback() {
         if(keySuccess=="true")
         {
             document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number after " + keyNrGuesses + " guesses.";
+            document.getElementById("counter").innerHTML = "It took you " + keyTimeTookToGuess + " seconds.";
         }
     }
 }

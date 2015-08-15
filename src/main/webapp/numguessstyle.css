@@ -87,12 +87,13 @@ input:hover{
     padding: 0 .8em 0 .8em;
 }
 
-#serverResponse {
-    color:black;
-    position: relative;
+
+#responseMessageDiv{
     top: 210px;
+    position: relative;
     width: auto;
     background-color: #f3d4bd;
+    color:black;
 }
 
 #number {

@@ -1,5 +1,10 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by condor on 29/11/14.
  * FastTrackIT, 2015
@@ -23,6 +28,10 @@ public class NumGeneratorBusinessLogic {
     private int numberOfGuesses;
     private int generatedNumber;
     private String hint;
+    long startingTime;
+    long guessTime;
+    long timeToGuess;
+
 
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
@@ -30,6 +39,10 @@ public class NumGeneratorBusinessLogic {
 
     public boolean getSuccessfulGuess(){
         return successfulGuess;
+    }
+
+    public long getGuessTime(){
+        return timeToGuess;
     }
 
     public String getHint(){
@@ -41,6 +54,7 @@ public class NumGeneratorBusinessLogic {
     }
 
     public boolean isFirstTime(){
+
         return isFirstTime;
     }
 
@@ -51,15 +65,21 @@ public class NumGeneratorBusinessLogic {
     }
 
     public boolean determineGuess(int guessNumber){
+
+
         if (isFirstTime) {
             generatedNumber = NumGenerator.generate(MAX_NUMBER);
             System.out.println("gennr:"+generatedNumber);
             isFirstTime = false;
+            startingTime = System.currentTimeMillis();
         }
         numberOfGuesses++;
         if (guessNumber == generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint="";
             successfulGuess = true;
+            guessTime = System.currentTimeMillis();
+            timeToGuess = guessTime - startingTime;
+            timeToGuess = timeToGuess / 1000;
         } else if (guessNumber < generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint = "higher";
             successfulGuess = false;
@@ -73,5 +93,9 @@ public class NumGeneratorBusinessLogic {
         return successfulGuess;
     }
 
+    public void timeMethod(){
+        long x = System.currentTimeMillis();
+
+    }
 
 }
