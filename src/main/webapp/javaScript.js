@@ -30,6 +30,7 @@ function callback() {
         if (keyRestartGame != undefined && keyRestartGame.length > 0) {
             alert("The game was restarted!");
             document.getElementById("number").value="";
+            location.reload();
             return;
         }
 
