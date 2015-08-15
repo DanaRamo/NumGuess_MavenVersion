@@ -21,7 +21,7 @@ FastTrackIT 2015
 
 public class NumGeneratorBusinessLogic {
 
-    private static final int MAX_NUMBER = 6;
+    private static final int MAX_NUMBER = 10;
 
     private boolean isFirstTime = true;
     private boolean successfulGuess;
