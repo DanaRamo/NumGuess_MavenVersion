@@ -84,6 +84,11 @@ public class NumGeneratorBusinessLogic {
             timeToGuess = x;
             timeToGuess = timeToGuess / 1000;
 
+            //sendmail
+            SendMail sm = new SendMail();
+            sm.sendMail();
+
+
         } else if (guessNumber < generatedNumber && guessNumber < 11 && guessNumber > 0) {
             hint = "higher";
             successfulGuess = false;
