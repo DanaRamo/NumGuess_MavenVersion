@@ -11,10 +11,31 @@ import java.util.Properties;
 /**
  * Created by computer1977 on 8/22/2015.
  */
-public class SendMail {
+public class SendMail implements Runnable {
+        private int nr;
+        private int tentatives;
+        private double time;
+        private String toEmail;
 
-    public void sendMail() {
-        final String username = "lemonteamcode@gmail.com"; final String password = "fastrackit";
+    public SendMail( int nr, int tentatives, double time, String toEmail) {
+        this.nr = nr;
+        this.tentatives = tentatives;
+        this.time = time;
+        this.toEmail = toEmail;
+
+    }
+
+    public void send(){
+        Thread t = new Thread(this);
+        t.start();
+    }
+    public void run(){
+            System.out.println("");
+        final String username = "lemonteamcode@gmail.com";
+        final String password = "fastrackit";
+
+
+
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -33,10 +54,10 @@ public class SendMail {
 
             Message message = new MimeMessage(session);
            // message.setFrom(new InternetAddress("ionel.condor@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO,
+            message.setRecipients (Message.RecipientType.TO,
                     InternetAddress.parse("dana777ramo@gmail.com"));
                             message.setSubject("Num-guess");
-            message.setText("Congratulation!");
+            message.setText("Congratulation!\n" + "Nr:" + nr + "\n" + "Tentatives:");
 
             Transport.send(message);
 
@@ -46,5 +67,6 @@ public class SendMail {
             System.out.println("Email sending problems");
             e.printStackTrace();
         }
+
     }
 }

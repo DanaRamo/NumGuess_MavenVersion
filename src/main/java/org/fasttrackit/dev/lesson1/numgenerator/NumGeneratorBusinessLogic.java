@@ -34,6 +34,7 @@ public class NumGeneratorBusinessLogic {
 
 
 
+
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
     }
@@ -85,8 +86,8 @@ public class NumGeneratorBusinessLogic {
             timeToGuess = timeToGuess / 1000;
 
             //sendmail
-            SendMail sm = new SendMail();
-            sm.sendMail();
+            SendMail sm = new SendMail(generatedNumber, numberOfGuesses, timeToGuess, "dana777ramo@gmail.com");
+            sm.send();
 
 
         } else if (guessNumber < generatedNumber && guessNumber < 11 && guessNumber > 0) {
